@@ -728,7 +728,8 @@ void Checker_card()
         if (caseing[i] == c)
         {
          
-        c = rand() % new_rand;
+
+            c = rand() % new_rand;
         }
     }
 }
@@ -1055,8 +1056,8 @@ void Random_card_selector()
             enemy_keyv.push_back(key);
             // cout << vector_rand << " " << "hearts";
 
-            k9d++;
-            if (k9d == 13)
+            k9c++;
+            if (k9c == 13)
             {
                 caseing.push_back(c);
             }
@@ -1161,8 +1162,8 @@ void Random_card_selector()
             enemy_keyv.push_back(key);
             // cout << vector_rand << " " << "hearts";
 
-            k9d++;
-            if (k9d == 13)
+            k9p++;
+            if (k9p == 13)
             {
                 caseing.push_back(c);
             }
@@ -1533,6 +1534,14 @@ void BotAi()
 }
 void CompliteVec()
 {
+    int c;
+    int k3h = 0, k3d = 0, k3c = 0, k3p = 0;
+    int k9h = 0, k9d = 0, k9c = 0, k9p = 0;
+    int new_rand;
+
+    count_game_player = 0;
+    k_bot = 0;
+
     diamonds_vector_num.clear();
     diamonds_vector_num = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
 
@@ -1551,16 +1560,19 @@ void CompliteVec()
 
     enemy_keyv.clear();
     keyv.clear();
-    int k3h = 0, k3d = 0, k3c = 0, k3p = 0;
-    int k9h = 0, k9d = 0, k9c = 0, k9p = 0;
+
     
 }
 int main()
+
+
 {
     setlocale(LC_ALL, "ru");
-    string select_i;
+    int select_i;
     int select_j;
     SetConsoleCP(1251);
+    bool flag = true;
+
     SetConsoleOutputCP(1251);
     srand((unsigned int)time(0));
     do {
@@ -1591,21 +1603,25 @@ int main()
         getline(cin,start_game);
         if (start_game[0] == '1')
         {
-            break;
+           
         }
         else 
-        { }
+        {
+            flag = false;
+        }
     } while (!true);
     // random section 
     
     // Menu //
     int con = 0;
     int money = 1200;
-    do {
+
+    while(flag) {
+        c = rand() % 4;
         if (con != 2)
         {
             lose_bot = 0;
-            c = rand() % 4;
+           
             cout << "\n";
             BotAiCardDrop();
             BotAi();
@@ -1614,22 +1630,30 @@ int main()
             con++;
             continue;
         }
-        c = rand() % 4;
+      
       
         if (count_game_player > 21)
         {
-            cout << "lose" << "\n";
+            cout << "lose, if > 21" << "\n";
             cout << "Score:" << " " << count_game_player;
             cout << "\n";
             cout << "Score_bot:" << "" << k_bot;
+            cout << "\n";
             lose_bot = 1;
             con = 0;
-            count_game_player = 0;
-            k_bot = 0;
-
-            CompliteVec();
-            system("cls");
-            continue;
+            string new_game;
+            getline(cin, new_game);
+            if (new_game[0] == '1')
+            {
+                CompliteVec();
+                system("cls");
+                continue;
+            }
+            else
+            {
+                flag = false;
+            }
+         
         }
         else if (count_game_player == 21)
         {
@@ -1637,59 +1661,87 @@ int main()
             cout << "Score:" << " " << count_game_player;
             cout << "\n";
             cout << "Score_bot:" << "" << k_bot;
+            cout << "\n";
             lose_bot = 1;
             con = 0;
-            count_game_player = 0;
-            k_bot = 0;
-         
-            CompliteVec();
-            system("cls");
-            continue;
+            string new_game;
+            getline(cin, new_game);
+            if (new_game[0] == '1')
+            {
+                CompliteVec();
+                system("cls");
+                continue;
+            }
+            else
+            {
+                flag = false;
+            }
         }
         else if (k_bot == 21)
         {
-            cout << "lose" << "\n";
+            cout << "lose, but bot win" << "\n";
             cout << "Score:" << " " << count_game_player;
             cout << "\n";
             cout << "Score_bot:" << "" << k_bot;
+            cout << "\n";
             lose_bot = 1;
             con = 0;
-            count_game_player = 0;
-            k_bot = 0;
-        
-            CompliteVec();
-            system("cls");
-            continue;
+            string new_game;
+            getline(cin, new_game);
+            if (new_game[0] == '1')
+            {
+                CompliteVec();
+                system("cls");
+                continue;
+            }
+            else
+            {
+                flag = false;
+            }
         }
         else if (k_bot > 21)
         {
-            cout << "win" << "\n";
+            cout << "lose bot" << "\n";
             cout << "Score:" << " " << count_game_player;
             cout << "\n";
             cout << "Score_bot:" << "" << k_bot;
+            cout << "\n";
             lose_bot = 1;
             con = 0;
-            count_game_player = 0;
-            k_bot = 0;
-         
-            CompliteVec();
-            system("cls");
-            continue;
+            string new_game;
+            getline(cin, new_game);
+            if (new_game[0] == '1')
+            {
+                CompliteVec();
+                system("cls");
+                continue;
+            }
+            else
+            {
+                flag = false;
+            }
         }
         else if (drop_card == 1)
         {
-            cout << "win, bot droped cards" << "\n";
+            cout << "lose, bot droped cards" << "\n";
             cout << "Score:" << " " << count_game_player;
             cout << "\n";
             cout << "Score_bot:" << "" << k_bot;
+            cout << "\n";
             lose_bot = 1;
             con = 0;
-            count_game_player = 0;
-            k_bot = 0;
-          
-            CompliteVec();
-            system("cls");
-            continue;
+            string new_game;
+            getline(cin, new_game);
+            if (new_game[0] == '1')
+            {
+                CompliteVec();
+                system("cls");
+                continue;
+            }
+            else
+            {
+                flag = false;
+            }
         }
         cout << "\n";
         cout << "1. Продолжить игру";
@@ -1700,9 +1752,9 @@ int main()
         cout << "\n";
        
        
-        getline(cin, select_i);
+        cin >> select_i;
         cout << "\n";
-        if (select_i[0] == '1')
+        if (select_i == 1)
         {
             BotAiCardDrop();
             BotAi();
@@ -1710,19 +1762,25 @@ int main()
             OutputKard();
             if (count_game_player > 21)
             {
-                cout << "lose" << "\n";
+                cout << "lose, if > 21" << "\n";
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
+                cout << "\n";
                 lose_bot = 1;
                 con = 0;
-                count_game_player = 0;
-                k_bot = 0;
-            
-                CompliteVec();
-             
-                system("cls");
-                continue;
+                string new_game;
+                getline(cin, new_game);
+                if (new_game[0] == '1')
+                {
+                    CompliteVec();
+                    system("cls");
+                    continue;
+                }
+                else if (new_game[0] == '2')
+                {
+                    flag = false;
+                }
             }
             else if (count_game_player == 21)
             {
@@ -1730,64 +1788,92 @@ int main()
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
+                cout << "\n";
                 lose_bot = 1;
                 con = 0;
-                count_game_player = 0;
-                k_bot = 0;
-              
-                CompliteVec();
-                system("cls");
-                continue;
+                string new_game;
+                getline(cin, new_game);
+                if (new_game[0] == '1')
+                {
+                    CompliteVec();
+                    system("cls");
+                    continue;
+                }
+                else if (new_game[0] == '2')
+                {
+                    flag = false;
+                }
             }
             else if (k_bot == 21)
             {
-                cout << "lose" << "\n";
+                cout << "lose, but bot win" << "\n";
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
+                cout << "\n";
                 lose_bot = 1;
                 con = 0;
-                count_game_player = 0;
-                k_bot = 0;
-           
-                CompliteVec();
-                system("cls");
-                continue;
+                string new_game;
+                getline(cin, new_game);
+                if (new_game[0] == '1')
+                {
+                    CompliteVec();
+                    system("cls");
+                    continue;
+                }
+                else if (new_game[0] == '2')
+                {
+                    flag = false;
+                }
             }
             else if (k_bot > 21)
             {
-                cout << "win" << "\n";
+                cout << "lose bot" << "\n";
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
+                cout << "\n";
                 lose_bot = 1;
                 con = 0;
-                count_game_player = 0;
-                k_bot = 0;
-             
-                CompliteVec();
-                system("cls");
-                continue;
+                string new_game;
+                getline(cin, new_game);
+                if (new_game[0] == '1')
+                {
+                    CompliteVec();
+                    system("cls");
+                    continue;
+                }
+                else if (new_game[0] == '2')
+                {
+                    flag = false;
+                }
             }
             else if (drop_card == 1)
             {
-                cout << "win, bot droped cards" << "\n";
+                cout << "lose, bot droped cards" << "\n";
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
+                cout << "\n";
                 lose_bot = 1;
                 con = 0;
-                count_game_player = 0;
-                k_bot = 0;
-              
-                CompliteVec();
-                system("cls");
-                continue;
+                string new_game;
+                getline(cin, new_game);
+                if (new_game[0] == '1')
+                {
+                    CompliteVec();
+                    system("cls");
+                    continue;
+                }
+                else if (new_game[0] == '2')
+                {
+                    flag = false;
+                }
             }
         }
-        else if (select_i[0] == '2')
+        else if (select_i == 2)
         {
-            break;
+            flag = false;
         }
        
      /*   cout << ".------.\n"
@@ -1820,7 +1906,7 @@ int main()
         
 
        
-    } while (true);
+    }
    
     cout << "\n";
    
