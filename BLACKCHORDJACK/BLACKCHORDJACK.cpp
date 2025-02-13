@@ -5,7 +5,7 @@
 #include <vector> 
 #include <time.h> 
 #include <stdlib.h> 
-#include <Windows.h> 
+#include <windows.h> 
 #include <string>
 using namespace std;
 using namespace std;
@@ -23,7 +23,7 @@ vector<int> clovers_vector_num = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
 
 vector<int> pikes_vector_num = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
 
-
+int hidden_card = 1;
 int ace;
 int count_game_player = 0;
 int c;
@@ -413,105 +413,121 @@ void OutputKard()
         cout << "\n";
         for (unsigned i = 0; i < enemy_keyv.size(); ++i)
         {
-            if (enemy_keyv[i] % 101 == 0)
+            if (enemy_keyv[i] != enemy_keyv[0])
             {
-                kard = "1";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else  if (enemy_keyv[i] % 102 == 0)
-            {
-                kard = "2";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 103 == 0)
-            {
-                kard = "3";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 104 == 0)
-            {
-                kard = "4";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 105 == 0)
-            {
-                kard = "5";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 106 == 0)
-            {
-                kard = "6";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 107 == 0)
-            {
-                kard = "7";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 108 == 0)
-            {
-                kard = "8";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 109 == 0)
-            {
-                kard = "9";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 110 == 0)
-            {
-                kard = "X";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 111 == 0)
-            {
-                kard = "J";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 112 == 0)
-            {
-                kard = "Q";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 113 == 0)
-            {
-                kard = "K";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 114 == 0)
-            {
-                kard = "T";
-                AssebleCardNumberTop();
-                cout << "\t";
-                kard.clear();
-            }
 
+                if (enemy_keyv[i] % 101 == 0)
+                {
+                    kard = "1";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else  if (enemy_keyv[i] % 102 == 0)
+                {
+                    kard = "2";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 103 == 0)
+                {
+                    kard = "3";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 104 == 0)
+                {
+                    kard = "4";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 105 == 0)
+                {
+                    kard = "5";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 106 == 0)
+                {
+                    kard = "6";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 107 == 0)
+                {
+                    kard = "7";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 108 == 0)
+                {
+                    kard = "8";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 109 == 0)
+                {
+                    kard = "9";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 110 == 0)
+                {
+                    kard = "X";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 111 == 0)
+                {
+                    kard = "J";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 112 == 0)
+                {
+                    kard = "Q";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 113 == 0)
+                {
+                    kard = "K";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 114 == 0)
+                {
+                    kard = "T";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+            }
+            
+            if (hidden_card != 0)
+
+            {
+                if (enemy_keyv[0] == enemy_keyv[i])
+                {
+                    kard = "?";
+                    AssebleCardNumberTop();
+                    cout << "\t";
+                    kard.clear();
+                }
+
+             }
 
         }
         cout << "\n";
@@ -575,103 +591,118 @@ void OutputKard()
         cout << "\n";
         for (unsigned i = 0; i < enemy_keyv.size(); ++i)
         {
-            if (enemy_keyv[i] % 101 == 0)
+            if (enemy_keyv[i] != enemy_keyv[0])
             {
-                kard = "1";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
+                if (enemy_keyv[i] % 101 == 0)
+                {
+                    kard = "1";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else  if (enemy_keyv[i] % 102 == 0)
+                {
+                    kard = "2";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 103 == 0)
+                {
+                    kard = "3";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 104 == 0)
+                {
+                    kard = "4";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 105 == 0)
+                {
+                    kard = "5";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 106 == 0)
+                {
+                    kard = "6";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 107 == 0)
+                {
+                    kard = "7";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 108 == 0)
+                {
+                    kard = "8";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 109 == 0)
+                {
+                    kard = "9";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 110 == 0)
+                {
+                    kard = "X";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 111 == 0)
+                {
+                    kard = "J";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 112 == 0)
+                {
+                    kard = "Q";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 113 == 0)
+                {
+                    kard = "K";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
+                else if (enemy_keyv[i] % 114 == 0)
+                {
+                    kard = "T";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
             }
-            else  if (enemy_keyv[i] % 102 == 0)
+            
+            if (hidden_card != 0)
+              
             {
-                kard = "2";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 103 == 0)
-            {
-                kard = "3";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 104 == 0)
-            {
-                kard = "4";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 105 == 0)
-            {
-                kard = "5";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 106 == 0)
-            {
-                kard = "6";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 107 == 0)
-            {
-                kard = "7";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 108 == 0)
-            {
-                kard = "8";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 109 == 0)
-            {
-                kard = "9";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 110 == 0)
-            {
-                kard = "X";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 111 == 0)
-            {
-                kard = "J";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 112 == 0)
-            {
-                kard = "Q";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 113 == 0)
-            {
-                kard = "K";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
-            }
-            else if (enemy_keyv[i] % 114 == 0)
-            {
-                kard = "T";
-                AssebleCardNumberButton();
-                cout << "\t";
-                kard.clear();
+                if (enemy_keyv[0] == enemy_keyv[i])
+                {
+                    kard = "?";
+                    AssebleCardNumberButton();
+                    cout << "\t";
+                    kard.clear();
+                }
             }
 
 
@@ -697,7 +728,7 @@ void Checker_card()
         if (caseing[i] == c)
         {
          
-            c = rand() % new_rand;
+        c = rand() % new_rand;
         }
     }
 }
@@ -1484,10 +1515,14 @@ void BotAiCardDrop()
 
     }
 }
+int lose_bot = 0;
 void BotAi()
 {
     enemy_kard_detect++;
-    Random_card_selector();
+    if (lose_bot == 0)
+    {
+        Random_card_selector();
+    }
     OutputKard();
     enemy_kard_detect = 0;
     cout << endl;
@@ -1496,9 +1531,33 @@ void BotAi()
 
 
 }
+void CompliteVec()
+{
+    diamonds_vector_num.clear();
+    diamonds_vector_num = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
 
+    clovers_vector_num.clear();
+    clovers_vector_num = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
+
+
+    pikes_vector_num.clear();
+    pikes_vector_num = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
+
+
+    hearts_vector_num.clear();
+    hearts_vector_num = { 2,3,4,5,6,7,8,9,10,11,12,13,14 };
+
+    caseing.clear();
+
+    enemy_keyv.clear();
+    keyv.clear();
+    int k3h = 0, k3d = 0, k3c = 0, k3p = 0;
+    int k9h = 0, k9d = 0, k9c = 0, k9p = 0;
+    
+}
 int main()
 {
+    setlocale(LC_ALL, "ru");
     string select_i;
     int select_j;
     SetConsoleCP(1251);
@@ -1528,23 +1587,110 @@ int main()
                                                                                                                                                                               
            )" << "\n";
         SetConsoleTextAttribute(hColor, 7);
-        int start_game;
-        cin >> start_game;
-        if (start_game == 1)
+        string start_game;
+        getline(cin,start_game);
+        if (start_game[0] == '1')
         {
             break;
         }
         else 
         { }
     } while (!true);
-
-
+    // random section 
+    
+    // Menu //
+    int con = 0;
+    int money = 1200;
     do {
-       
-        // random section 
+        if (con != 2)
+        {
+            lose_bot = 0;
+            c = rand() % 4;
+            cout << "\n";
+            BotAiCardDrop();
+            BotAi();
+            Random_card_selector();
+            OutputKard();
+            con++;
+            continue;
+        }
         c = rand() % 4;
-        // Menu //
- 
+      
+        if (count_game_player > 21)
+        {
+            cout << "lose" << "\n";
+            cout << "Score:" << " " << count_game_player;
+            cout << "\n";
+            cout << "Score_bot:" << "" << k_bot;
+            lose_bot = 1;
+            con = 0;
+            count_game_player = 0;
+            k_bot = 0;
+
+            CompliteVec();
+            system("cls");
+            continue;
+        }
+        else if (count_game_player == 21)
+        {
+            cout << "win" << "\n";
+            cout << "Score:" << " " << count_game_player;
+            cout << "\n";
+            cout << "Score_bot:" << "" << k_bot;
+            lose_bot = 1;
+            con = 0;
+            count_game_player = 0;
+            k_bot = 0;
+         
+            CompliteVec();
+            system("cls");
+            continue;
+        }
+        else if (k_bot == 21)
+        {
+            cout << "lose" << "\n";
+            cout << "Score:" << " " << count_game_player;
+            cout << "\n";
+            cout << "Score_bot:" << "" << k_bot;
+            lose_bot = 1;
+            con = 0;
+            count_game_player = 0;
+            k_bot = 0;
+        
+            CompliteVec();
+            system("cls");
+            continue;
+        }
+        else if (k_bot > 21)
+        {
+            cout << "win" << "\n";
+            cout << "Score:" << " " << count_game_player;
+            cout << "\n";
+            cout << "Score_bot:" << "" << k_bot;
+            lose_bot = 1;
+            con = 0;
+            count_game_player = 0;
+            k_bot = 0;
+         
+            CompliteVec();
+            system("cls");
+            continue;
+        }
+        else if (drop_card == 1)
+        {
+            cout << "win, bot droped cards" << "\n";
+            cout << "Score:" << " " << count_game_player;
+            cout << "\n";
+            cout << "Score_bot:" << "" << k_bot;
+            lose_bot = 1;
+            con = 0;
+            count_game_player = 0;
+            k_bot = 0;
+          
+            CompliteVec();
+            system("cls");
+            continue;
+        }
         cout << "\n";
         cout << "1. Продолжить игру";
         cout << "\n";
@@ -1552,8 +1698,8 @@ int main()
         cout << "\n";
         cout << "Score:" << " " << count_game_player;
         cout << "\n";
-        cout << "Score_bot:" << "" << k_bot;
-        cout << "\n";
+       
+       
         getline(cin, select_i);
         cout << "\n";
         if (select_i[0] == '1')
@@ -1568,7 +1714,15 @@ int main()
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
-                break;
+                lose_bot = 1;
+                con = 0;
+                count_game_player = 0;
+                k_bot = 0;
+            
+                CompliteVec();
+             
+                system("cls");
+                continue;
             }
             else if (count_game_player == 21)
             {
@@ -1576,7 +1730,14 @@ int main()
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
-                break;
+                lose_bot = 1;
+                con = 0;
+                count_game_player = 0;
+                k_bot = 0;
+              
+                CompliteVec();
+                system("cls");
+                continue;
             }
             else if (k_bot == 21)
             {
@@ -1584,7 +1745,14 @@ int main()
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
-                break;
+                lose_bot = 1;
+                con = 0;
+                count_game_player = 0;
+                k_bot = 0;
+           
+                CompliteVec();
+                system("cls");
+                continue;
             }
             else if (k_bot > 21)
             {
@@ -1592,7 +1760,14 @@ int main()
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
-                break;
+                lose_bot = 1;
+                con = 0;
+                count_game_player = 0;
+                k_bot = 0;
+             
+                CompliteVec();
+                system("cls");
+                continue;
             }
             else if (drop_card == 1)
             {
@@ -1600,6 +1775,14 @@ int main()
                 cout << "Score:" << " " << count_game_player;
                 cout << "\n";
                 cout << "Score_bot:" << "" << k_bot;
+                lose_bot = 1;
+                con = 0;
+                count_game_player = 0;
+                k_bot = 0;
+              
+                CompliteVec();
+                system("cls");
+                continue;
             }
         }
         else if (select_i[0] == '2')
@@ -1638,6 +1821,9 @@ int main()
 
        
     } while (true);
+   
+    cout << "\n";
+   
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки" 
