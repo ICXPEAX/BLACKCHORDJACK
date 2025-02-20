@@ -738,7 +738,21 @@ void Checker_card()
 // Random kards drop
 void Random_card_selector()
 {
+    bool flag2 = true;
     Checker_card();
+    while (flag2)
+    {
+        c = rand() % 5;
+        if (c == 0)
+        {
+            continue;
+        }
+        else
+        {
+            flag2 = false;
+        }
+    }
+    
 
 
     switch (c)
@@ -1814,7 +1828,7 @@ int main()
         }
         if (flag != false)
         {
-            c = rand() % 4;
+           
             if (con != 2)
             {
                 lose_bot = 0;
