@@ -1572,6 +1572,7 @@ void CompliteVec()
 bool flag = true;
 int continue_c = 0;
 int money = 1200;
+int bot_money = 1200;
 int stavka;
 void checker_win()
 {
@@ -1583,6 +1584,7 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
+        bot_money += (stavka * 2);
         getline(cin, new_game);
         getline(cin, new_game);
         cout << "\n";
@@ -1606,7 +1608,7 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
-        money += stavka;
+        money += (stavka * 2);
         getline(cin, new_game);
         getline(cin, new_game);
         cout << "\n";
@@ -1629,6 +1631,7 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
+        bot_money += (stavka * 2);
         getline(cin, new_game);
         getline(cin, new_game);
         cout << "\n";
@@ -1651,7 +1654,7 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
-        money += stavka;
+        money += (stavka * 2);
         getline(cin, new_game);
         getline(cin, new_game);
         cout << "\n";
@@ -1674,7 +1677,7 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
-        money += stavka;
+        money += (stavka*2);
         getline(cin, new_game);
         getline(cin, new_game);
         cout << "\n";
@@ -1690,16 +1693,19 @@ void checker_win()
         }
     }
 }
+
 void Casino_Vulcan_Stavka()
 {
     bool flag_rise = true;
     int rise;
     int check;
     int choose;
+    int rand_money;
     stavka = 300;
     cout << "Default bet 300" << "\n";
 
     cout << "Your money " << money << "\n";
+    cout << "Bot money " << bot_money << "\n";
     cout << "Choose move" << "\n";
     cout << "1. Rise" << "\n";
     cout << "2. Check" << "\n";
@@ -1714,6 +1720,20 @@ void Casino_Vulcan_Stavka()
             {
                 stavka += rise;
                 money -= stavka;
+                bot_money -= stavka;
+                rand_money = rand() % 10;
+                if (rand_money == 10)
+                {
+                    cout << "bot rise money";
+                   
+                    
+                }
+                if (rand_money > 0 and rand_money < 9)
+                {
+                    cout << "bot check";
+                   
+                }
+
                 flag_rise = false;
             }
           
@@ -1723,8 +1743,10 @@ void Casino_Vulcan_Stavka()
     {
         cout << "Check" << "\n";
         money -= stavka;
+        bot_money -= stavka;
         
     }
+
 
 }
 int main()
@@ -1789,6 +1811,11 @@ int main()
                 cout << "no money, no funny";
                 flag = false;
 
+            }
+            if (bot_money < 300)
+            {
+                cout << "bot killed by casino collectors";
+                flag = false;
             }
             if (flag != false)
             {
