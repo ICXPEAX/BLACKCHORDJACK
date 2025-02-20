@@ -68,55 +68,55 @@ void AssebleCardButton()
 }
 void AssebleCardNumberTop()
 {
-    cout << "|"<<kard<<".--. |";
+    cout << "|" << kard << ".--. |";
 }
 
 void AssebleCardNumberButton()
 {
-    cout << "| '--'"<<kard<<"|";
+    cout << "| '--'" << kard << "|";
 }
 void AssebleCardPrintTop()
 {
-    
-        if (id_print_phantasm == 1)
-        {
-            cout << "| (\\/) |";
-        }
-        else if (id_print_phantasm == 2)
-        {
-            cout << "| :/\\: |";
-        }
-        else if (id_print_phantasm == 3)
-        {
-            cout << "| :(): |";
-        }
-        else if (id_print_phantasm == 4)
-        {
-            cout << "| :/\\: |";
-        }
-   
+
+    if (id_print_phantasm == 1)
+    {
+        cout << "| (\\/) |";
+    }
+    else if (id_print_phantasm == 2)
+    {
+        cout << "| :/\\: |";
+    }
+    else if (id_print_phantasm == 3)
+    {
+        cout << "| :(): |";
+    }
+    else if (id_print_phantasm == 4)
+    {
+        cout << "| :/\\: |";
+    }
+
 
 }
 void AssebleCardPrintButtom()
 {
 
-        if (id_print_phantasm == 1)
-        {
-            cout << "| :\\/: |";
-        }
-        else if (id_print_phantasm == 2)
-        {
-            cout << "| :\\/: |";
-        }
-        else if (id_print_phantasm == 3)
-        {
-            cout << "| ()() |";
-        }
-        else if (id_print_phantasm == 4)
-        {
-            cout << "| (__) |";
-        }
-   
+    if (id_print_phantasm == 1)
+    {
+        cout << "| :\\/: |";
+    }
+    else if (id_print_phantasm == 2)
+    {
+        cout << "| :\\/: |";
+    }
+    else if (id_print_phantasm == 3)
+    {
+        cout << "| ()() |";
+    }
+    else if (id_print_phantasm == 4)
+    {
+        cout << "| (__) |";
+    }
+
 
 }
 void OutputKard()
@@ -515,7 +515,7 @@ void OutputKard()
                     kard.clear();
                 }
             }
-            
+
             if (hidden_card != 0)
 
             {
@@ -527,7 +527,7 @@ void OutputKard()
                     kard.clear();
                 }
 
-             }
+            }
 
         }
         cout << "\n";
@@ -692,9 +692,9 @@ void OutputKard()
                     kard.clear();
                 }
             }
-            
+
             if (hidden_card != 0)
-              
+
             {
                 if (enemy_keyv[0] == enemy_keyv[i])
                 {
@@ -721,13 +721,13 @@ void OutputKard()
 void Checker_card()
 {
     new_rand = c - caseing.size();
-    
+
     for (unsigned i = 0; i < caseing.size();++i)
 
     {
         if (caseing[i] == c)
         {
-         
+
 
             c = rand() % new_rand;
         }
@@ -828,13 +828,13 @@ void Random_card_selector()
             else if (vector_rand == 14)
             {
 
-                
-                
-                if (k_bot>7)
+
+
+                if (k_bot > 7)
                 {
                     k_bot += 1;
                 }
-                else if (k_bot<7)
+                else if (k_bot < 7)
                 {
                     k_bot += 11;
                 }
@@ -851,7 +851,7 @@ void Random_card_selector()
 
             break;
         }
-    } 
+    }
     case 2:
     {
         if (enemy_kard_detect == 0)
@@ -909,7 +909,7 @@ void Random_card_selector()
         }
         else
         {
-     
+
             it_num = rand() % diamonds_vector_num.size();
             vector_rand = diamonds_vector_num[it_num];
             key = 200 + (diamonds_vector_num[it_num] * 2);
@@ -1182,17 +1182,17 @@ void Random_card_selector()
         if (vector_rand == 11)
         {
             count_game_player += 10;
-       
+
         }
         else if (vector_rand == 12)
         {
             count_game_player += 10;
-     
+
         }
         else if (vector_rand == 13)
         {
             count_game_player += 10;
-   
+
         }
         keyv.push_back(key);
        // cout << vector_rand << " " << "hearts kings";
@@ -1201,7 +1201,7 @@ void Random_card_selector()
         {
             caseing.push_back(c);
         }
-    
+
         break;
     }  case 9:
     {
@@ -1242,7 +1242,7 @@ void Random_card_selector()
         {
             caseing.push_back(c);
         }
-        
+
         break;
     }  case 6:
     {
@@ -1254,17 +1254,17 @@ void Random_card_selector()
         if (vector_rand == 11)
         {
             count_game_player += 10;
-       
+
         }
         else if (vector_rand == 12)
         {
             count_game_player += 10;
-        
+
         }
         else if (vector_rand == 13)
         {
             count_game_player += 10;
-       
+
         }
         keyv.push_back(key);
         //cout << vector_rand << " " << "diamonds kings";
@@ -1273,7 +1273,7 @@ void Random_card_selector()
         {
             caseing.push_back(c);
         }
-        
+
         break;
     }  case 10:
     {
@@ -1316,7 +1316,7 @@ void Random_card_selector()
         {
             caseing.push_back(c);
         }
-       
+
         break;
     }  case 7:
     {
@@ -1328,17 +1328,17 @@ void Random_card_selector()
         if (vector_rand == 11)
         {
             count_game_player += 10;
-          
+
         }
         else if (vector_rand == 12)
         {
             count_game_player += 10;
-          
+
         }
         else if (vector_rand == 13)
         {
             count_game_player += 10;
-           
+
         }
         keyv.push_back(key);
         //cout << vector_rand << " " << "clovers kings";
@@ -1347,7 +1347,7 @@ void Random_card_selector()
         {
             caseing.push_back(c);
         }
-        
+
         break;
     }  case 11:
     {
@@ -1390,7 +1390,7 @@ void Random_card_selector()
         {
             caseing.push_back(c);
         }
-        
+
         break;
     }  case 8:
     {
@@ -1402,17 +1402,17 @@ void Random_card_selector()
         if (vector_rand == 11)
         {
             count_game_player += 10;
- 
+
         }
         else if (vector_rand == 12)
         {
             count_game_player += 10;
-     
+
         }
         else if (vector_rand == 13)
         {
             count_game_player += 10;
-     
+
         }
         keyv.push_back(key);
         //cout << vector_rand << " " << "pikes kings";
@@ -1421,7 +1421,7 @@ void Random_card_selector()
         {
             caseing.push_back(c);
         }
-      
+
         break;
     }  case 12:
     {
@@ -1453,11 +1453,12 @@ void Random_card_selector()
     }
 }
 int drop_card;
+int chance_of_drop;
 void BotAiCardDrop()
 {
     if (k_bot == 15)
     {
-        int chance_of_drop;
+        
         chance_of_drop = rand() % 10;
         if (chance_of_drop == 10)
         {
@@ -1465,9 +1466,9 @@ void BotAiCardDrop()
         }
 
     }
-    if (k_bot == 16)
+    else if (k_bot == 16)
     {
-        int chance_of_drop;
+        
         chance_of_drop = rand() % 8;
         if (chance_of_drop == 8)
         {
@@ -1475,9 +1476,9 @@ void BotAiCardDrop()
         }
 
     }
-    if (k_bot == 17)
+    else if (k_bot == 17)
     {
-        int chance_of_drop;
+        
         chance_of_drop = rand() % 7;
         if (chance_of_drop == 7)
         {
@@ -1485,9 +1486,9 @@ void BotAiCardDrop()
         }
 
     }
-    if (k_bot == 18)
+    else if (k_bot == 18)
     {
-        int chance_of_drop;
+    
         chance_of_drop = rand() % 6;
         if (chance_of_drop == 6)
         {
@@ -1495,9 +1496,9 @@ void BotAiCardDrop()
         }
 
     }
-    if (k_bot == 19)
+    else if (k_bot == 19)
     {
-        int chance_of_drop;
+      
         chance_of_drop = rand() % 5;
         if (chance_of_drop == 5)
         {
@@ -1505,9 +1506,9 @@ void BotAiCardDrop()
         }
 
     }
-    if (k_bot == 20)
+    else if (k_bot == 20)
     {
-        int chance_of_drop;
+       
         chance_of_drop = rand() % 5;
         if (chance_of_drop != 5)
         {
@@ -1532,6 +1533,7 @@ void BotAi()
 
 
 }
+int con = 0;
 string new_game;
 int stav_c = 0;
 void CompliteVec()
@@ -1563,16 +1565,15 @@ void CompliteVec()
 
     enemy_keyv.clear();
     keyv.clear();
-    int con = 0;
+    con = 0;
     new_game.clear();
     stav_c = 0;
 
-    
+
 }
 bool flag = true;
 int continue_c = 0;
 int money = 1200;
-int bot_money = 1200;
 int stavka;
 void checker_win()
 {
@@ -1584,7 +1585,6 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
-        bot_money += (stavka * 2);
         getline(cin, new_game);
         getline(cin, new_game);
         cout << "\n";
@@ -1631,7 +1631,7 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
-        bot_money += (stavka * 2);
+
         getline(cin, new_game);
         getline(cin, new_game);
         cout << "\n";
@@ -1677,7 +1677,7 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
-        money += (stavka*2);
+        money += (stavka * 2);
         getline(cin, new_game);
         getline(cin, new_game);
         cout << "\n";
@@ -1705,7 +1705,6 @@ void Casino_Vulcan_Stavka()
     cout << "Default bet 300" << "\n";
 
     cout << "Your money " << money << "\n";
-    cout << "Bot money " << bot_money << "\n";
     cout << "Choose move" << "\n";
     cout << "1. Rise" << "\n";
     cout << "2. Check" << "\n";
@@ -1713,38 +1712,35 @@ void Casino_Vulcan_Stavka()
     if (choose == 1)
     {
         while (flag_rise) {
-            
+
             cout << "Press how much rising bet" << "\n";
             cin >> rise;
             if (rise <= (money - stavka))
             {
                 stavka += rise;
                 money -= stavka;
-                bot_money -= stavka;
                 rand_money = rand() % 10;
                 if (rand_money == 10)
                 {
                     cout << "bot rise money";
-                   
-                    
+
+
                 }
                 if (rand_money > 0 and rand_money < 9)
                 {
                     cout << "bot check";
-                   
                 }
 
                 flag_rise = false;
             }
-          
+
         }
     }
     else if (choose == 2)
     {
         cout << "Check" << "\n";
         money -= stavka;
-        bot_money -= stavka;
-        
+
     }
 
 
@@ -1754,11 +1750,8 @@ int main()
 
 {
     setlocale(LC_ALL, "ru");
-    int select_i;
-    int select_j;
+    string select_i;
     SetConsoleCP(1251);
-  
-
     SetConsoleOutputCP(1251);
     srand((unsigned int)time(0));
     do {
@@ -1786,36 +1779,32 @@ int main()
            )" << "\n";
         SetConsoleTextAttribute(hColor, 7);
         string start_game;
-        getline(cin,start_game);
+        getline(cin, start_game);
         if (start_game[0] == '1')
         {
-           
+
         }
-        else 
+        else
         {
             flag = false;
         }
     } while (!true);
     // random section 
-    
+
     // Menu //
-    int con = 0;
 
 
-    while(flag) {
+
+    while (flag) {
+        select_i.clear();
         if (stav_c == 0)
         {
             if (money < 300)
             {
-               
+
                 cout << "no money, no funny";
                 flag = false;
 
-            }
-            if (bot_money < 300)
-            {
-                cout << "bot killed by casino collectors";
-                flag = false;
             }
             if (flag != false)
             {
@@ -1849,15 +1838,17 @@ int main()
             cout << "\n";
             cout << "1. Продолжить игру";
             cout << "\n";
-            cout << "2. Закончить игру";
+            cout << "2. Не брать карту";
+            cout << "\n";
+            cout << "3. Закончить игру";
             cout << "\n";
             cout << "Score:" << " " << count_game_player;
             cout << "\n";
 
 
-            cin >> select_i;
-            cout << "\n";
-            if (select_i == 1)
+            getline(cin, select_i);
+            getline(cin, select_i);
+            if (select_i[0] == '1')
             {
                 BotAiCardDrop();
                 BotAi();
@@ -1870,46 +1861,58 @@ int main()
                     continue;
                 }
             }
-            else if (select_i == 2)
+            else if (select_i[0] == '2')
+            {
+                BotAiCardDrop();
+                BotAi();
+                OutputKard();
+                checker_win();
+                if (continue_c == 1)
+                {
+                    continue_c = 0;
+                    continue;
+                }
+            }
+            else if (select_i[0] == '3')
             {
                 flag = false;
             }
         }
-       
-     /*   cout << ".------.\n"
-            "|1.--. |\n"
-            "| :/\\: |\n"
-            "| (__) |\n"
-            "| '--'1|\n"
-            "`------'";
-        cout << "\n";
-        cout << ".------.\n"
-            "|2.--. |\n"
-            "| (\\/) |\n"
-            "| :\\/: |\n"
-            "| '--'2|\n"
-            "`------'";
-        cout << "\n";
-        cout << ".------.\n"
-            "|3.--. |\n"
-            "| :(): |\n"
-            "| ()() |\n"
-            "| '--'3|\n"
-            "`------'";
-        cout << "\n";
-        cout << ".------.\n"
-            "|4.--. |\n"
-            "| :/\\: |\n"
-            "| :\\/: |\n"
-            "| '--'4|\n"
-            "`------'"; */
-        
 
-       
+        /*   cout << ".------.\n"
+               "|1.--. |\n"
+               "| :/\\: |\n"
+               "| (__) |\n"
+               "| '--'1|\n"
+               "`------'";
+           cout << "\n";
+           cout << ".------.\n"
+               "|2.--. |\n"
+               "| (\\/) |\n"
+               "| :\\/: |\n"
+               "| '--'2|\n"
+               "`------'";
+           cout << "\n";
+           cout << ".------.\n"
+               "|3.--. |\n"
+               "| :(): |\n"
+               "| ()() |\n"
+               "| '--'3|\n"
+               "`------'";
+           cout << "\n";
+           cout << ".------.\n"
+               "|4.--. |\n"
+               "| :/\\: |\n"
+               "| :\\/: |\n"
+               "| '--'4|\n"
+               "`------'"; */
+
+
+
     }
-   
+
     cout << "\n";
-   
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки" 
