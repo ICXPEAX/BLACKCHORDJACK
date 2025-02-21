@@ -722,7 +722,7 @@ void Checker_card()
 {
     new_rand = c - caseing.size();
 
-    for (unsigned i = 0; i < caseing.size();++i)
+    for (unsigned i = 0; i < caseing.size(); ++i)
 
     {
         if (caseing[i] == c)
@@ -752,7 +752,7 @@ void Random_card_selector()
             flag2 = false;
         }
     }
-    
+
 
 
     switch (c)
@@ -1472,7 +1472,7 @@ void BotAiCardDrop()
 {
     if (k_bot == 15)
     {
-        
+
         chance_of_drop = rand() % 10;
         if (chance_of_drop == 10)
         {
@@ -1482,7 +1482,7 @@ void BotAiCardDrop()
     }
     else if (k_bot == 16)
     {
-        
+
         chance_of_drop = rand() % 8;
         if (chance_of_drop == 8)
         {
@@ -1492,7 +1492,7 @@ void BotAiCardDrop()
     }
     else if (k_bot == 17)
     {
-        
+
         chance_of_drop = rand() % 7;
         if (chance_of_drop == 7)
         {
@@ -1502,7 +1502,7 @@ void BotAiCardDrop()
     }
     else if (k_bot == 18)
     {
-    
+
         chance_of_drop = rand() % 6;
         if (chance_of_drop == 6)
         {
@@ -1512,7 +1512,7 @@ void BotAiCardDrop()
     }
     else if (k_bot == 19)
     {
-      
+
         chance_of_drop = rand() % 5;
         if (chance_of_drop == 5)
         {
@@ -1522,7 +1522,7 @@ void BotAiCardDrop()
     }
     else if (k_bot == 20)
     {
-       
+
         chance_of_drop = rand() % 5;
         if (chance_of_drop != 5)
         {
@@ -1550,6 +1550,7 @@ void BotAi()
 int con = 0;
 string new_game;
 int stav_c = 0;
+int stop = 0;
 void CompliteVec()
 {
     int c;
@@ -1582,13 +1583,14 @@ void CompliteVec()
     con = 0;
     new_game.clear();
     stav_c = 0;
+    stop = 0;
 
 
 }
 bool flag = true;
 int continue_c = 0;
-int money = 1200;
-int stavka;
+unsigned double money = 1200;
+unsigned double stavka;
 void checker_win()
 {
     if (count_game_player > 21)
@@ -1599,8 +1601,17 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
-        getline(cin, new_game);
-        getline(cin, new_game);
+        money -= (stavka);
+        hidden_card = 0;
+        BotAi();
+        OutputKard();
+        cout << "\n";
+        cout << "1. Новая игра";
+        cout << "\n";
+        cout << "2. Покинуть казино";
+        cout << "\n";
+        cin >> new_game;
+
         cout << "\n";
         if (new_game[0] == '1')
         {
@@ -1608,7 +1619,7 @@ void checker_win()
             system("cls");
             continue_c++;
         }
-        else
+        else if (new_game[0] == '2')
         {
             flag = false;
         }
@@ -1623,16 +1634,23 @@ void checker_win()
         cout << "\n";
         lose_bot = 1;
         money += (stavka * 2);
-        getline(cin, new_game);
-        getline(cin, new_game);
+        hidden_card = 0;
+        BotAi();
+        OutputKard();
         cout << "\n";
+        cout << "1. Новая игра";
+        cout << "\n";
+        cout << "2. Покинуть казино";
+        cout << "\n";
+        cin >> new_game;
+
         if (new_game[0] == '1')
         {
             CompliteVec();
             system("cls");
             continue_c++;
         }
-        else
+        else if (new_game[0] == '2')
         {
             flag = false;
         }
@@ -1645,17 +1663,24 @@ void checker_win()
         cout << "Score_bot:" << "" << k_bot;
         cout << "\n";
         lose_bot = 1;
-
-        getline(cin, new_game);
-        getline(cin, new_game);
+        money -= (stavka);
+        hidden_card = 0;
+        BotAi();
+        OutputKard();
         cout << "\n";
+        cout << "1. Новая игра";
+        cout << "\n";
+        cout << "2. Покинуть казино";
+        cout << "\n";
+        cin >> new_game;
+
         if (new_game[0] == '1')
         {
             CompliteVec();
             system("cls");
             continue_c++;
         }
-        else
+        else if (new_game[0] == '2')
         {
             flag = false;
         }
@@ -1669,8 +1694,16 @@ void checker_win()
         cout << "\n";
         lose_bot = 1;
         money += (stavka * 2);
-        getline(cin, new_game);
-        getline(cin, new_game);
+        hidden_card = 0;
+        BotAi();
+        OutputKard();
+        cout << "\n";
+        cout << "1. Новая игра";
+        cout << "\n";
+        cout << "2. Покинуть казино";
+        cout << "\n";
+        cin >> new_game;
+
         cout << "\n";
         if (new_game[0] == '1')
         {
@@ -1678,7 +1711,7 @@ void checker_win()
             system("cls");
             continue_c++;
         }
-        else
+        else if (new_game[0] == '2')
         {
             flag = false;
         }
@@ -1692,16 +1725,23 @@ void checker_win()
         cout << "\n";
         lose_bot = 1;
         money += (stavka * 2);
-        getline(cin, new_game);
-        getline(cin, new_game);
+        hidden_card = 0;
+        BotAi();
+        OutputKard();
         cout << "\n";
+        cout << "1. Новая игра";
+        cout << "\n";
+        cout << "2. Покинуть казино";
+        cout << "\n";
+        cin >> new_game;
+  
         if (new_game[0] == '1')
         {
             CompliteVec();
             system("cls");
             continue_c++;
         }
-        else
+        else if (new_game[0] == '2')
         {
             flag = false;
         }
@@ -1711,7 +1751,7 @@ void checker_win()
 void Casino_Vulcan_Stavka()
 {
     bool flag_rise = true;
-    int rise;
+    unsigned double rise;
     int check;
     int choose;
     int rand_money;
@@ -1764,7 +1804,7 @@ int main()
 
 {
     setlocale(LC_ALL, "ru");
-    string select_i;
+    int select_i;
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
     srand((unsigned int)time(0));
@@ -1810,7 +1850,6 @@ int main()
 
 
     while (flag) {
-        select_i.clear();
         if (stav_c == 0)
         {
             if (money < 300)
@@ -1828,16 +1867,17 @@ int main()
         }
         if (flag != false)
         {
-           
+
             if (con != 2)
             {
                 lose_bot = 0;
 
                 cout << "\n";
-                BotAiCardDrop();
-                BotAi();
                 Random_card_selector();
                 OutputKard();
+                cout << "\n";
+                BotAiCardDrop();
+                BotAi();
                 con++;
                 continue;
             }
@@ -1849,24 +1889,62 @@ int main()
             }
 
 
-            cout << "\n";
-            cout << "1. Продолжить игру";
-            cout << "\n";
-            cout << "2. Не брать карту";
-            cout << "\n";
-            cout << "3. Закончить игру";
-            cout << "\n";
-            cout << "Score:" << " " << count_game_player;
-            cout << "\n";
-
-
-            getline(cin, select_i);
-            getline(cin, select_i);
-            if (select_i[0] == '1')
+            
+            
+            if (stop == 0)
             {
+
+                cout << "\n";
+                cout << "1. Продолжить игру";
+                cout << "\n";
+                cout << "2. Не брать карту";
+                cout << "\n";
+                cout << "3. Закончить игру";
+                cout << "\n";
+                cout << "Score:" << " " << count_game_player;
+                cout << "\n";
+                lose_bot++;
+
+                cin >> select_i;
+                if (select_i == 1)
+                {
+
+                    Random_card_selector();
+                    OutputKard();
+                    cout << "\n";
+                    BotAiCardDrop();
+                    BotAi();
+                    checker_win();
+                    if (continue_c == 1)
+                    {
+                        continue_c = 0;
+                        continue;
+                    }
+                }
+                else if (select_i == 2)
+                {
+                    BotAiCardDrop();
+                    BotAi();
+                    OutputKard();
+                    checker_win();
+                    stop++;
+                    lose_bot=0;
+                    if (continue_c == 1)
+                    {
+                        continue_c = 0;
+                        continue;
+                    }
+                }
+                else if (select_i == 3)
+                {
+                    flag = false;
+                }
+            }
+            else
+            {
+                cout << "\n";
                 BotAiCardDrop();
                 BotAi();
-                Random_card_selector();
                 OutputKard();
                 checker_win();
                 if (continue_c == 1)
@@ -1874,22 +1952,6 @@ int main()
                     continue_c = 0;
                     continue;
                 }
-            }
-            else if (select_i[0] == '2')
-            {
-                BotAiCardDrop();
-                BotAi();
-                OutputKard();
-                checker_win();
-                if (continue_c == 1)
-                {
-                    continue_c = 0;
-                    continue;
-                }
-            }
-            else if (select_i[0] == '3')
-            {
-                flag = false;
             }
         }
 
